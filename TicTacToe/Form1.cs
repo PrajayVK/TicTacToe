@@ -14,8 +14,9 @@ namespace TicTacToe
     {
         public Form1()
         {
-            InitializeComponent();
             Setbool();
+            InitializeComponent();
+            
         }
         bool[] previouslySelected=new bool[9];
         public void Setbool()
@@ -27,7 +28,6 @@ namespace TicTacToe
         }
         String[] gameboard = new string[9];
         int CurrentTurn = 0;
-        
         public String ReturnSymbol(int turn)
         {
             if(turn%2==0)
@@ -38,9 +38,7 @@ namespace TicTacToe
             {
                 return "X";
             }
-            
         }
-        
         public void CheckForWinner()
         {
             String combination = "";
@@ -72,9 +70,7 @@ namespace TicTacToe
                     case 7:
                         combination = gameboard[2] + gameboard[5] + gameboard[8];
                         break;
-                        
                 }
-                
                 if (combination.Equals("OOO"))
                 {
                     MessageBox.Show("O has won the game!","We have a winner.",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
@@ -85,10 +81,10 @@ namespace TicTacToe
                     MessageBox.Show("X has won the game!", "We have a winner.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     reset();
                 }
-                checkDraw();
+                CheckDraw();
             }
         }
-        public void checkDraw()
+        public void CheckDraw()
         {
             int counter=0;
             for(int i=0;i<gameboard.Length;i++)
@@ -99,9 +95,7 @@ namespace TicTacToe
                     reset();
                     MessageBox.Show("Draw!", "No Winner.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
             }
-
         }
         public void reset()
         {
@@ -129,12 +123,9 @@ namespace TicTacToe
                 CheckForWinner();
                 previouslySelected[0] = true;
             }   
-            
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
-
             if (!previouslySelected[1])
             {
                 CurrentTurn++;
@@ -144,7 +135,6 @@ namespace TicTacToe
                 previouslySelected[1] = true;
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (!previouslySelected[2])
@@ -156,7 +146,6 @@ namespace TicTacToe
                 previouslySelected[2] = true;
             }        
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             if (!previouslySelected[3])
@@ -168,7 +157,6 @@ namespace TicTacToe
                 previouslySelected[3] = true;
             }
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             if (!previouslySelected[4])
@@ -180,7 +168,6 @@ namespace TicTacToe
                 previouslySelected[4] = true;
             }
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if (!previouslySelected[5])
@@ -192,7 +179,6 @@ namespace TicTacToe
                 previouslySelected[5] = true;
             }
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             if (!previouslySelected[6])
